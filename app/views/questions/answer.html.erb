@@ -1,10 +1,22 @@
 
-<% if params[:question] == 'I am going to work' %>
-  <p><%= 'Great !' %></p>
-<% elsif params[:question].include?('?') %>
-  <p><%= 'Silly question, get dressed and go to work! ' %></p>
-<% else %>
-  <p><%= "I don't care, get dressed and go to work!" %></p>
-<% end %>
+
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <div class="p-3 mb-2 bg-warning text-dark" style="--bs-bg-opacity: .2;>
+      <p class="card-text"><%= params[:question] %></p>
+      <p><em>- You</em></p>
+    </div>
+  </div>
+</div>
+
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <div class="p-3 mb-2 bg-warning text-dark" style="--bs-bg-opacity: .2;>
+      <p class="card-text"><%= @coach %></p>
+      <p><em>- Your coach</em></p>
+    </div>
+  </div>
+</div>
+
 
 <%= link_to 'Ask a new question', ask_path %>
